@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Maker</title>
+</head>
+<script src="js/script.js" defer></script>
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    <div>
+        <p id="stuNum"></p>
+        <button id="stuNumBtn">Student Number</button>
+    </div>
+
+    <div class="wrapper">
+        <h1>In's Pizza</h1>
+        <form action="">
+            <div>
+                <span>Name</span><input type="text" id="name" value="">
+                <span>Phone</span><input type="text" id="phone" value="">
+            </div>
+
+            <div>
+                <label for="pizzaSelect">Pizza</label>
+                <select name="" id="pizzaSelect">
+                    <option value="cheesePizza">Cheese Pizza</option>
+                    <option value="pepperoniPizza">Pepperoni Pizza</option>
+                    <option value="chickenPizza">Chicken Pizza</option>
+                    <option value="bbqPizza">BBQ Pizza</option>
+                </select>
+            </div>
+            
+            <div>
+                <span>Size</span>
+                <label for=""><input type="radio" name="size" value="medium">M</label>
+                <label for=""><input type="radio" name="size" value="large">L</label>
+            </div>
+
+            <div>
+                <label for="pizzaSelect">Though</label>
+                <select name="" id="thoughSelect">
+                    <option value="plain">Plain</option>
+                    <option value="thin">Thin</option>
+                    <option value="cheesecrust">Cheese Crust</option>
+                    <option value="sweetpotato">Sweetpotato Mouse</option>
+                    
+                </select>
+            </div>
+
+            <div>
+                <span>Extra toppings</span>
+                <label for="">Bacon</label><input type="checkbox" name="topping" value="bacon">
+                <label for="">Pepperoni</label><input type="checkbox" name="topping" value="pepperoni">
+                <label for="">Cheddar Cheese</label><input type="checkbox" name="topping" value="cheddar">
+                <label for="">Mozzarella</label><input type="checkbox" name="topping" value="Mozzarella">
+            </div>
+
+            <div>
+                <span>Requirements</span><textarea name="msg" id="" cols="30" rows="10"></textarea>
+            </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        <div>
+            <p>Check Your Order</p>
+            <p id="ordercheck"></p>
+        </div>
+    </div> <!-- //wrapper -->
+
+</body>
+
+</html>
