@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+   padding-left: 30px;
+}
+
+.stuNum {   
+    padding:50px 30px;
+}
+
+#stuNumBtn {
+    padding: 15px 20px;
+    margin-top: 20px;
+}
+
+.customer-info {
+    margin-bottom: 50px;
+    padding-left: 8px;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+    color: #006491
+}
+
+h1 {
+    margin-bottom: 50px;
+    color: #269cd3;
+    font-size: 60px;
+
+}
+
+h3 {
+    background-color: #006491;
+    color: #fff;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+#name,
+#phone {
+    height: 30px;
+    width: 350px;
+    margin: 10px 0 10px 8px;
+}
+
+
+.box:not(.stuNum, .toppings, .requirements) {
+    height: 120px;
+}
+
+.toppings, .requirements {
+    height: 250px;
+}
+
+#plus,
+#minus {
+    width: 30px;
+    height: 30px;
+}
+
+.toppings div {
+    height: 60px;
+}
+
+label {
+    margin: 0 10px;
+}
+
+.topping div:nth-child(3) {
+    
+}
+
+input[type="submit"] {
+    padding:15px 25px;
+    margin-bottom: 30px;
+    background-color: #006491;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border:none;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(34, 146, 198);
+    color: #fff;
+    font-weight: bold;
+   
+}
+
+.topping-item {
+    padding-left: 10px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+select {
+    width: 250px;
+    height: 40px;
+    font-size: 18px;
+}
+
+label {
+    font-size: 18px;
+}
+
+textarea {
+    width: 400px;
+}
+
+.mypizza > h3 {
+    background-color: #1c3039;
+}
+
+

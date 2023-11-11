@@ -10,63 +10,111 @@
 <link rel="stylesheet" href="css/style.css">
 
 <body>
-    <div>
+    <div class="box stuNum">
         <p id="stuNum"></p>
         <button id="stuNumBtn">Student Number</button>
     </div>
 
     <div class="wrapper">
-        <h1>In's Pizza</h1>
+        <h1>Domimo Pizza</h1>
         <form action="">
-            <div>
-                <span>Name</span><input type="text" id="name" value="">
-                <span>Phone</span><input type="text" id="phone" value="">
+            <div class="customer-info">
+                <h2>Customer Info</h2>
+                <div><span>Name</span><input type="text" id="name" value=""></div>
+                <div><span>Phone</span><input type="text" id="phone" value=""></div>
             </div>
 
             <div>
-                <label for="pizzaSelect">Pizza</label>
+                <h2>My Pizza</h2>
+            </div>
+
+            <div class="box pizza">
+                <h3><label for="pizzaSelect">PIZZA TYPE</label></h3>
                 <select name="" id="pizzaSelect">
-                    <option value="cheesePizza">Cheese Pizza</option>
-                    <option value="pepperoniPizza">Pepperoni Pizza</option>
-                    <option value="chickenPizza">Chicken Pizza</option>
+                    <option value="cheesePizza">Cheese</option>
+                    <option value="VeggiePizza">Veggie</option>
+                    <option value="hawaiianPizza">Hawaiian</option>
+                    <option value="pepperoniPizza">Pepperoni</option>
+                    <option value="baconpotatoPizza">Bacon Potato</option>
+                    <option value="hotchickenPizza">Hot Chicken</option>
                     <option value="bbqPizza">BBQ Pizza</option>
                 </select>
             </div>
-            
-            <div>
-                <span>Size</span>
-                <label for=""><input type="radio" name="size" value="medium">M</label>
-                <label for=""><input type="radio" name="size" value="large">L</label>
+
+            <div class="box quantity">
+                <h3>Quantity</h3>
+                <div class="btn-box">
+                    <input type="button" value="+" id="plus">
+                    <input type="button" value="-" id="minus">
+                    <p id="quantity">0</p>
+                </div>
             </div>
 
-            <div>
-                <label for="pizzaSelect">Though</label>
+            <div class="box size">
+                <h3>SIZE</h3>
+                <input type="radio" name="size" value="small"><label for="small">10" Small</label>
+                <input type="radio" name="size" value="medium"><label for="medium">12" Medium</label>
+                <input type="radio" name="size" value="large"><label for="large">14" Large</label>
+            </div>
+
+            <div class="box though">
+                <h3><label for="pizzaSelect">THOUGH</label></h3>
                 <select name="" id="thoughSelect">
-                    <option value="plain">Plain</option>
-                    <option value="thin">Thin</option>
+                    <option value="plain">Origianl</option>
+                    <option value="thin">Crunch Thin Crust</option>
                     <option value="cheesecrust">Cheese Crust</option>
                     <option value="sweetpotato">Sweetpotato Mouse</option>
-                    
                 </select>
             </div>
 
-            <div>
-                <span>Extra toppings</span>
-                <label for="">Bacon</label><input type="checkbox" name="topping" value="bacon">
-                <label for="">Pepperoni</label><input type="checkbox" name="topping" value="pepperoni">
-                <label for="">Cheddar Cheese</label><input type="checkbox" name="topping" value="cheddar">
-                <label for="">Mozzarella</label><input type="checkbox" name="topping" value="Mozzarella">
+            <div class="box sauce">
+                <h3>SAUCE</h3>
+                <input type="radio" id="pizzaSauce" name="sauce" value="pizzaSauce"><label for="pizzaSauce">PizzaSauce</label>
+                <input type="radio" id="bbqSauce" name="sauce" value="bbqSauce"><label for="bbqSauce">BBQ Sauce</label>
+                <input type="radio" id="alfredoSauce" name="sauce" value="alfredoSauce"><label for="alfredoSauce">Alfredo Sauce</label>
+                <input type="radio" id="ranchSauce" name="sauce" value="ranchSauce"><label for="ranchSauce">Ranch Dressing</label>
             </div>
 
-            <div>
-                <span>Requirements</span><textarea name="msg" id="" cols="30" rows="10"></textarea>
+            <div class="box toppings">
+                <h3>TOPPINGS</h3>
+                <div class="topping-item">
+                    <h4>Meats</h4>
+                    <input type="checkbox" name="topping" value="bacon"><label for="">Bacon</label>
+                    <input type="checkbox" name="topping" value="ham"><label for="">Ham</label>
+                    <input type="checkbox" name="topping" value="pepperoni"><label for="">Pepperoni</label>
+                    <input type="checkbox" name="topping" value="beef"><label for="">Beef Crumble</label>
+                </div>
+                <div class="topping-item">
+                    <h4>Cheese</h4>
+                    <input type="checkbox" name="topping" value="cheddar"><label for="">Cheddar</label>
+                    <input type="checkbox" name="topping" value="feta"><label for="">Feta</label>
+                    <input type="checkbox" name="topping" value="mozzarella"><label for="">Mozzarella</label>
+                    <input type="checkbox" name="topping" value="parmesan"><label for="">Parmesan Asiago</label>
+                </div>
+                <div class="topping-item">
+                    <h4>Vegetables</h4>
+                    <div class="check">
+                        <input type="checkbox" name="topping" value="onions"><label for="">Onions</label>
+                        <input type="checkbox" name="topping" value="blackOlive"><label for="">Black Olives</label>
+                        <input type="checkbox" name="topping" value="greenOlive"><label for="">Green Olives</label>
+                        <input type="checkbox" name="topping" value="tomato"><label for="">Tomatoes</label>
+                        <input type="checkbox" name="topping" value="redpepper"><label for="">Roasted Red Peppers</label>
+                    </div>    
+                </div>
+
+
             </div>
-            
+
+            <div class="box requirements">
+                <h3>REQUIREMENTS</h3>
+                <textarea name="msg" id="" cols="30" rows="10"></textarea>
+            </div>
+
             <input type="submit" value="Submit">
         </form>
 
-        <div>
-            <p>Check Your Order</p>
+        <div class="box mypizza">
+            <h3>Check My Pizza</h3>
             <p id="ordercheck"></p>
         </div>
     </div> <!-- //wrapper -->
