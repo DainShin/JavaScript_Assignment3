@@ -8,9 +8,43 @@ const plus = document.getElementById('plus');
 const minus = document.getElementById('minus');
 const quantity = document.getElementById('quantity');
 
+class Pizza {
+    constructor(orderName, phone, pizzaName, quantity, size, sauce, thoughName, toppings, requirements) {
+        this.orderName = orderName;
+        this.phone = phone;
+        this.pizzaName = pizzaName;
+        this.quantity = quantity;
+        this.size = size;
+        this.sauce = sauce;
+        this.thoughName = thoughName;
+        this.toppings = toppings;
+        this.requirements = requirements;
+    }
+
+    // method
+    confirmOrder() {
+        ordercheck.innerHTML =
+            `<ul>
+            <li>Customer name : ${this.orderName} </li>
+            <li>Pizza: ${this.pizzaName}</li>
+            <li>  Quantity : ${this.quantity}</li>
+            <li>Size: ${this.size}</li>
+            <li>Sauce: ${this.sauce}</li>
+            <li>Though: ${this.thoughName}</li>
+            <li> Toppings: ${this.toppings.join(', ')}</li>
+            <li>Requirements: ${this.requirements}</li>
+        </ul>`;
+
+        // style
+        ordercheck.style.margin = '10px 0 50px 50px';
+        ordercheck.style.fontSize = '16px';
+    }
+} // Pizza class
+
+
 var num = 0;
 
-// eventListener
+// EventListener
 plus.addEventListener('click', function () {
     console.log('plus')
     num += 1;
@@ -40,25 +74,22 @@ form.addEventListener('submit', function (event) {
     // The variables for taking the values user enter
     var orderName = document.getElementById('name').value;
     var phone = document.getElementById('phone').value;
-    
+
     var pizzaSelect = document.getElementById('pizzaSelect');
     var pizzaName = pizzaSelect.options[pizzaSelect.selectedIndex].innerText;
 
     var size = document.querySelector('input[name="size"]:checked').nextElementSibling.innerText;
     var sauce = document.querySelector('input[name="sauce"]:checked').nextElementSibling.innerText;
 
-    
 
-    
     var thoughSelect = document.getElementById('thoughSelect');
     var thoughName = thoughSelect.options[thoughSelect.selectedIndex].innerText;
-    
+
     var quantity = document.getElementById('quantity').innerText;
 
     // The checked values will be stored in this list
     var toppings = [];
     var toppingSelect = document.querySelectorAll('input[name="topping"]:checked');
-
 
     // The selected values will be stored in the toppings list through forEach statement
     toppingSelect.forEach(function (selected) {
@@ -84,36 +115,8 @@ form.addEventListener('submit', function (event) {
     } else if (thoughSelect === '') {
         alert('Please choose tough');
     } else {
-        function Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughSelect, toppinglst, requirements) {
-            this.orderName = orderName;
-            this.phone = phone;
-            this.pizzaName = pizzaName;
-            this.quantity = 0;
-            this.size = size;
-            this.thoughName = thoughName;
-            this.toppings = toppings;
-            this.requirements = requirements;
-            this.confirmOrder = function () {
-                ordercheck.innerHTML =
-                `<ul>
-                    <li>Customer name : ${orderName} </li>
-                    <li>Pizza: ${pizzaName}</li>
-                    <li>  Quantity : ${quantity}</li>
-                    <li>Size: ${size}</li>
-                    <li>Sauce: ${sauce}</li>
-                    <li>Though: ${thoughName}</li>
-                    <li> Toppings: ${toppinglst.join(', ')}</li>
-                    <li>Requirements: ${requirements}</li>
-                </ul>`;
-
-                // style
-                ordercheck.style.margin = '10px 0 50px 50px';
-                ordercheck.style.fontSize = '16px';
-                 
-            };
-        }
-
-        var myPizza = new Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughSelect, toppings, requirements);
+        var myPizza =  new Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughName, toppings, requirements);
         myPizza.confirmOrder();
+        console.log(myPizza.confirmOrder());
     }
 });
