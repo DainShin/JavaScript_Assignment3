@@ -23,6 +23,7 @@ class Pizza {
         this.requirements = requirements;
     }
 
+
     // When user click the "Order" button, this method will be called after creating the instance.
     // This message will be shown in the ordercheck section.
     confirmOrder() {
@@ -82,47 +83,49 @@ form.addEventListener('submit', function (event) {
     var orderName = document.getElementById('name').value;
     var phone = document.getElementById('phone').value;
 
+    // Check for null or empty values and show alert if necessary
+    if (!orderName.trim()) {
+        alert('Please enter the name');
+        return;
+    }
+
+    if (!phone.trim() || isNaN(phone)) {
+        alert('Please enter a valid phone number');
+        return;
+    }
+
     var pizzaSelect = document.getElementById('pizzaSelect');
     var pizzaName = pizzaSelect.options[pizzaSelect.selectedIndex].innerText;
 
-    var size = document.querySelector('input[name="size"]:checked').nextElementSibling.innerText;
-    var sauce = document.querySelector('input[name="sauce"]:checked').nextElementSibling.innerText;
+    var sizeInput = document.querySelector('input[name="size"]:checked');
+    var size = sizeInput ? sizeInput.nextElementSibling.innerText : null;
+    if (!size) {
+        alert('Please choose the size');
+        return;
+    }
 
+    var sauceInput = document.querySelector('input[name="sauce"]:checked');
+    var sauce = sauceInput ? sauceInput.nextElementSibling.innerText : null;
+    if (!sauce) {
+        alert('Please choose the sauce');
+        return;
+    }
 
     var thoughSelect = document.getElementById('thoughSelect');
     var thoughName = thoughSelect.options[thoughSelect.selectedIndex].innerText;
 
-    var quantity = document.getElementById('quantity').innerText;
-
-    // The checked values will be stored in this list.
+    var selectedToppings = document.querySelectorAll('input[name="topping"]:checked');
     var toppings = [];
-    var toppingSelect = document.querySelectorAll('input[name="topping"]:checked');
-
-    // The selected values will be stored in the toppings list through forEach statement.
-    toppingSelect.forEach(function (selected) {
+    selectedToppings.forEach(function (selected) {
         toppings.push(selected.nextElementSibling.innerText);
     });
 
-
     var requirements = document.querySelector('textarea[name="msg"]').value;
 
-    // Validation for the essential values. 
-    if (orderName === '') {
-        alert('Please enter the name');
-    } else if (phone === '' || isNaN(phone)) {
-        alert('Pleae enter the valid phone number');
-    } else if (pizzaSelect === '') {
-        alert('Please choose the pizza');
-    } else if (quantity === 0) {
-        alert('Please select the quanity');
-    } else if (size === null) {
-        alert('Please choose the size');
-    } else if (sauce === null) {
-        alert('Please choose the sauce');
-    } else if (thoughSelect === '') {
-        alert('Please choose tough');
-    } else {  // If the values have no problems, the Pizza instance will be created and the confirmOrder method will be called.
-        var myPizza =  new Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughName, toppings, requirements);
-        myPizza.confirmOrder();
-    }
+    // Create an instance of the Pizza class with validated data
+    var pizzaOrder = new Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughName, toppings, requirements);
+
+    // Show the order details
+    pizzaOrder.confirmOrder();
+   
 });
