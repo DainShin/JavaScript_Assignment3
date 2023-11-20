@@ -123,9 +123,10 @@ form.addEventListener('submit', function (event) {
     var requirements = document.querySelector('textarea[name="msg"]').value;
 
     // Create an instance of the Pizza class with validated data
-    var pizzaOrder = new Pizza(orderName, phone, pizzaName, quantity, size, sauce, thoughName, toppings, requirements);
+    var pizzaOrder = new Pizza(orderName, phone, pizzaName, num, size, sauce, thoughName, toppings, requirements);
 
     // Show the order details
     pizzaOrder.confirmOrder();
+
    
 });
